@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f3e9c9; /* Light cream from image 1 */
+  --foreground: #1a1a1a;
+  --card-bg: #ffffff;
+  --shadow: #000000;
+}
+
+.dark {
+  --background: #0a0a0a; /* Dark from image 2 */
+  --foreground: #ffffff;
+  --card-bg: #1a1a1a;
+  --shadow: #ffffff;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Inter", sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+.brutalist-text {
+  color: var(--foreground);
+}
+
+.brutalist-border {
+  border: 3px solid var(--foreground);
+}
+
+.brutalist-shadow {
+  box-shadow: 5px 5px 0px 0px var(--shadow);
+}
