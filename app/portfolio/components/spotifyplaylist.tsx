@@ -16,7 +16,7 @@ export default function SpotifyPlaylist() {
           My current on repeat
         </div>
         <iframe
-          style={{ borderRadius: "0px" }} // Square corners for brutalist look
+          style={{ borderRadius: "0px" }}
           src="https://open.spotify.com/embed/playlist/09bZJleIg1LswxxNT4EPBO?utm_source=generator&theme=0" // Replace with your actual ID
           width="100%"
           height="152"

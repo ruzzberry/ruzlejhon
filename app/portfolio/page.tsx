@@ -5,6 +5,7 @@ import ThemeToggle from "./components/ThemeToggle";
 import React from "react";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 import SpotifyPlaylist from "./components/spotifyplaylist";
+import TechStacks from "./components/techstacks";
 
 export default function Home() {
   const [text] = useTypewriter({
@@ -36,9 +37,11 @@ export default function Home() {
         {/* Profile Card */}
         <div className="w-full md:col-span-4 flex justify-center md:justify-start">
           <div className="brutalist-border brutalist-shadow bg-[var(--card-bg)] text-[var(--foreground)] p-3 md:p-4 w-full max-w-[320px] relative">
-            <div className="absolute top-2 right-2 border-2 border-black dark:border-white rounded-full p-1 bg-white dark:bg-zinc-800 z-10">
-              <span className="text-xs"></span>
-            </div>
+            {/*
+              <div className="absolute top-2 right-2 border-2 border-black dark:border-white rounded-full p-1 bg-white dark:bg-zinc-800 z-10">
+                <span className="text-xs">IF EVER MAISIPAN KO GAWIN NAPAPALITAN PICURE</span>
+              </div>
+            */}
             <div className="relative aspect-square w-full">
               <Image
                 src="/formalpic.jpg"
@@ -59,16 +62,17 @@ export default function Home() {
 
         {/* Hero Text */}
         <div className="w-full md:col-span-8 space-y-6 text-left">
-          <h1 className="text-5xl sm:text-6xl md:text-9xl font-black uppercase leading-[0.9] tracking-tighter">
+          <h1 className="text-5xl sm:text-6xl md:text-8xl font-black uppercase leading-[0.9] tracking-tighter">
             <span className="text-grey-600">{text}</span>
             <Cursor cursorStyle="|" />
           </h1>
           <div className="max-w-xl space-y-4">
             <p className="text-lg opacity-90 leading-relaxed">
               I’m a full-stack web developer and QA engineer who enjoys building
-              robust web solutions and making sure they actually work. From
-              front-end to back-end, and from testing to deployment, I focus on
-              clean code, solid functionality, and great user experience.{" "}
+              robust web solutions and making sure they actually work Through a
+              sophisticated testing. From front-end to back-end, and from
+              testing to deployment, I focus on clean code, solid functionality,
+              and great user experience.{" "}
             </p>
           </div>
 
@@ -95,6 +99,9 @@ export default function Home() {
         </div>
       </div>
 
+      <div className="max-w-6xl mx-auto px-4">
+        <TechStacks />
+      </div>
       <section className="pb-24">
         <SpotifyPlaylist />
       </section>
