@@ -6,6 +6,7 @@ import React from "react";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 import SpotifyPlaylist from "./components/spotifyplaylist";
 import TechStacks from "./components/techstacks";
+import TechStachPreview from "./components/techstack";
 
 export default function Home() {
   const [text] = useTypewriter({
@@ -42,13 +43,38 @@ export default function Home() {
                 <span className="text-xs">IF EVER MAISIPAN KO GAWIN NAPAPALITAN PICURE</span>
               </div>
             */}
-            <div className="relative aspect-square w-full">
-              <Image
-                src="/formalpic.jpg"
-                alt="Avatar"
-                fill
-                className="bg-zinc-800 object-cover"
-              />
+            <div className="group relative aspect-square w-full overflow-hidden">
+              {/* LIGHT MODE IMAGES */}
+              <div style={{ display: "var(--light-only)" }}>
+                <Image
+                  src="/formalpic.jpg"
+                  alt="Avatar"
+                  fill
+                  className="bg-zinc-800 object-cover"
+                />
+                <Image
+                  src="/formalshyy.jpg"
+                  alt="Avatar Hover"
+                  fill
+                  className="absolute inset-0 object-cover opacity-0 group-hover:opacity-100"
+                />
+              </div>
+
+              {/* DARK MODE IMAGES */}
+              <div style={{ display: "var(--dark-only)" }}>
+                <Image
+                  src="/sleeping1.png" // Change this to your dark mode filename
+                  alt="Avatar Dark"
+                  fill
+                  className="bg-zinc-800 object-cover"
+                />
+                <Image
+                  src="/wokeup1.png" // Change this to your dark mode hover filename
+                  alt="Avatar Hover Dark"
+                  fill
+                  className="absolute inset-0 object-cover opacity-0 group-hover:opacity-100"
+                />
+              </div>
             </div>
             <div className="mt-4 flex justify-between items-center font-bold">
               <span className="text-xl md:text-2xl">@rzljhn</span>
@@ -98,8 +124,11 @@ export default function Home() {
           </div>
         </div>
       </div>
-
+      <div className="h-[16vh]" />
       <div className="max-w-6xl mx-auto px-4">
+        <a className="brutalist-border brutalist-shadow bg-[#facc15] font-bold text-black px-4 py-2 md:py-3 flex items-center gap-2 flex-1 sm:flex-none justify-center">
+          MY TECHNICAL STACKS
+        </a>
         <TechStacks />
       </div>
       <section className="pb-24">

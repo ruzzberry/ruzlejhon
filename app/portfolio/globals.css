@@ -1,17 +1,23 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f3e9c9; /* Light cream from image 1 */
+  --background: #f3e9c9;
   --foreground: #1a1a1a;
   --card-bg: #ffffff;
   --shadow: #000000;
+  /* Add these */
+  --light-only: block;
+  --dark-only: none;
 }
 
 .dark {
-  --background: #0a0a0a; /* Dark from image 2 */
+  --background: #0a0a0a;
   --foreground: #ffffff;
   --card-bg: #1a1a1a;
   --shadow: #ffffff;
+  /* Add these */
+  --light-only: none;
+  --dark-only: block;
 }
 
 body {

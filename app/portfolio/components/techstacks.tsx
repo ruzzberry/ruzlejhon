@@ -1,17 +1,34 @@
 import React from "react";
+import { motion } from "framer-motion"; //
 
 const TechStacks = () => {
   const webStacks = {
     Frontend: [
-      "React.js",
+      "React",
       "Next.js",
       "TypeScript",
-      "JavaScript",
-      "Tailwind CSS",
+      "TailwindCSS",
       "Sass",
+      "SCSS",
+      "JavaScript",
+      "Wordpress",
     ],
     Backend: ["Golang", "Java", "Python"],
-    Tools: ["Git"],
+    Database: ["MySQL", "SQL Server", "Firebase"],
+    Tools: [
+      "Git",
+      "GitHub",
+      "BitBucket",
+      "Salesforce",
+      "NPM",
+      "VS Code",
+      "JetBrains IntelliJ",
+      "PyCharm",
+      "Discord",
+      "Teams",
+      "Jira",
+      "Trello",
+    ],
   };
 
   const qaStacks = {
@@ -66,10 +83,18 @@ const TechStacks = () => {
   );
 
   return (
-    <section className="mt-24 mb-12">
+    <section className="mt-10 mb-12 overflow-hidden">
+      {" "}
+      {/* Added overflow-hidden to prevent horizontal scrollbars during animation */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-0 brutalist-border overflow-hidden">
-        {/* Web Development Side */}
-        <div className="p-6 md:p-10 border-b-4 md:border-b-0 md:border-r-4 border-black dark:border-white bg-[#facc15]/10">
+        {/* Web Development Side - Slides from Left */}
+        <motion.div
+          initial={{ x: -100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="p-6 md:p-10 border-b-4 md:border-b-0 md:border-r-4 border-black dark:border-white bg-[#facc15]/10"
+        >
           <h2 className="text-4xl md:text-5xl font-black uppercase mb-8 tracking-tighter">
             Web <br /> Development
           </h2>
@@ -84,14 +109,25 @@ const TechStacks = () => {
             colorClass="bg-green-400 text-black"
           />
           <StackBox
-            title="Version Control"
+            title="Database"
+            items={webStacks.Database}
+            colorClass="bg-orange-400 text-black"
+          />
+          <StackBox
+            title="Others"
             items={webStacks.Tools}
             colorClass="bg-orange-400 text-black"
           />
-        </div>
+        </motion.div>
 
-        {/* QA Engineering Side */}
-        <div className="p-6 md:p-10 bg-white/5">
+        {/* QA Engineering Side - Slides from Right */}
+        <motion.div
+          initial={{ x: 100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="p-6 md:p-10 bg-white/5"
+        >
           <h2 className="text-4xl md:text-5xl font-black uppercase mb-8 tracking-tighter text-right md:text-left">
             QA <br /> Engineering
           </h2>
@@ -110,7 +146,7 @@ const TechStacks = () => {
             items={qaStacks.Methodologies}
             colorClass="bg-cyan-400 text-black"
           />
-        </div>
+        </motion.div>
       </div>
     </section>
   );
