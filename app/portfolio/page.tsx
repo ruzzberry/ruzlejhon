@@ -33,6 +33,7 @@ export default function Home() {
         </div>
         <ThemeToggle />
       </div>
+      <div className="h-[1.8vh]" /> {/*FOR GAP PURPOSE*/}
       <div className="max-w-6xl mx-auto flex flex-col md:grid md:grid-cols-12 gap-10 md:gap-12 items-center">
         <div className="w-full md:col-span-4 flex justify-center md:justify-start">
           <div className="brutalist-border brutalist-shadow bg-[var(--card-bg)] text-[var(--foreground)] p-3 md:p-4 w-full max-w-[320px] relative">
@@ -92,7 +93,7 @@ export default function Home() {
           <div className="max-w-xl space-y-4">
             <p className="text-lg opacity-90 leading-relaxed">
               I’m a full-stack web developer and QA engineer who enjoys building
-              robust web solutions and making sure they actually work Through a
+              robust web solutions and making sure they actually work through a
               sophisticated testing. From front-end to back-end, and from
               testing to deployment, I focus on clean code, solid functionality,
               and great user experience.{" "}

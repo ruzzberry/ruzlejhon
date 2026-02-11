@@ -123,7 +123,7 @@ const TechStacks = () => {
           whileInView={{ x: 0, opacity: 1 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="p-6 md:p-10 bg-white/5"
+          className="p-6 md:p-10 bg-[#facc15]/10"
         >
           <h2 className="text-4xl md:text-5xl font-black uppercase mb-8 tracking-tighter text-right md:text-left">
             QA <br /> Engineering
