@@ -1,4 +1,4 @@
-"use client"; // Required in Next.js App Router when using hooks
+"use client";
 
 import Image from "next/image";
 import ThemeToggle from "./components/ThemeToggle";
@@ -7,10 +7,11 @@ import { useTypewriter, Cursor } from "react-simple-typewriter";
 import SpotifyPlaylist from "./components/spotifyplaylist";
 import TechStacks from "./components/techstacks";
 import TechStachPreview from "./components/techstack";
+import Timeline from "./components/timeline";
 
 export default function Home() {
   const [text] = useTypewriter({
-    words: ["QA Engineer", "Web Developer", "Software Engineer"],
+    words: ["QA Engineer", "Web Developer"],
     loop: 0,
     typeSpeed: 70,
     deleteSpeed: 50,
@@ -26,16 +27,13 @@ export default function Home() {
         backgroundPosition: "left",
       }}
     >
-      {/* Header Area */}
       <div className="flex justify-between items-start mb-12 md:mb-20">
         <div className="brutalist-border brutalist-shadow bg-[var(--card-bg)] text-[var(--foreground)] px-4 py-2 font-black uppercase tracking-tighter text-lg md:text-xl">
           Ruzle's Portfolio
         </div>
         <ThemeToggle />
       </div>
-
       <div className="max-w-6xl mx-auto flex flex-col md:grid md:grid-cols-12 gap-10 md:gap-12 items-center">
-        {/* Profile Card */}
         <div className="w-full md:col-span-4 flex justify-center md:justify-start">
           <div className="brutalist-border brutalist-shadow bg-[var(--card-bg)] text-[var(--foreground)] p-3 md:p-4 w-full max-w-[320px] relative">
             {/*
@@ -61,7 +59,7 @@ export default function Home() {
                 />
               </div>
 
-              {/* DARK MODE IMAGES
+              {/*DARK MODE IMAGES
               <div style={{ display: "var(--dark-only)" }}>
                 <Image
                   src="/sleeping1.png" // Change this to your dark mode filename
@@ -86,10 +84,8 @@ export default function Home() {
             </div>
           </div>
         </div>
-
-        {/* Hero Text */}
         <div className="w-full md:col-span-8 space-y-6 text-left">
-          <h1 className="text-5xl sm:text-6xl md:text-8xl font-black uppercase leading-[0.9] tracking-tighter">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-black uppercase leading-[0.9] tracking-tighter min-h-[1.8em] md:min-h-[1.1em]">
             <span className="text-grey-600">{text}</span>
             <Cursor cursorStyle="|" />
           </h1>
@@ -107,7 +103,7 @@ export default function Home() {
             <div className="flex flex-wrap gap-3 w-full sm:w-auto">
               <a
                 href="#"
-                className="brutalist-border brutalist-shadow bg-[black] text-white px-4 py-2 md:py-3 flex items-center gap-2 flex-1 sm:flex-none justify-center 
+                className="brutalist-border brutalist-shadow bg-[black] font-black text-white px-4 py-2 md:py-3 flex items-center gap-2 flex-1 sm:flex-none justify-center 
              transition-all duration-100 hover:translate-x-[-2px] hover:translate-y-[-5px] hover:shadow-none"
               >
                 <span className="text-xs md:text-sm">SEND EMAIL</span>
@@ -116,7 +112,7 @@ export default function Home() {
               <a
                 href="/TAYAO, RUZLE JHON L. RESUME.pdf"
                 download="TAYAO_RUZLE_JHON_L_RESUME.pdf"
-                className="brutalist-border brutalist-shadow bg-[#facc15] text-black px-4 py-2 md:py-3 flex items-center gap-2 flex-1 sm:flex-none justify-center 
+                className="brutalist-border brutalist-shadow bg-[#facc15] font-black text-black px-4 py-2 md:py-3 flex items-center gap-2 flex-1 sm:flex-none justify-center 
              transition-all duration-100 hover:translate-x-[-2px] hover:translate-y-[-5px] hover:shadow-none"
               >
                 DOWNLOAD CV
@@ -125,13 +121,14 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="h-[16vh]" />
+      <div className="h-[16vh]" /> {/*FOR GAP PURPOSE*/}
       <div className="max-w-6xl mx-auto px-4">
-        <a className="brutalist-border brutalist-shadow bg-[#facc15] font-bold text-black px-4 py-2 md:py-3 flex items-center gap-2 flex-1 sm:flex-none justify-center">
-          MY TECHNICAL STACKS
+        <a className="border-4 border-[var(--foreground)] shadow-[8px_8px_0px_0px_var(--shadow)] bg-[#50a3fd] font-black uppercase text-xl md:text-3xl px-4 md:px-6 py-3 flex items-center gap-2 flex-1 sm:flex-none justify-center hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[4px_4px_0px_0px_var(--shadow)] transition-all text-black">
+          TECHNICAL STACKS
         </a>
         <TechStacks />
       </div>
+      <Timeline />
       <section className="pb-24">
         <SpotifyPlaylist />
       </section>

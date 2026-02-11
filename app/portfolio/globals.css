@@ -37,4 +37,12 @@ body {
 
 .brutalist-shadow {
   box-shadow: 5px 5px 0px 0px var(--shadow);
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.1s ease;
+}
+
+.brutalist-shadow {
+  /* Using the variable ensures it flips from black to white automatically */
+  box-shadow: 5px 5px 0px 0px var(--shadow);
 }

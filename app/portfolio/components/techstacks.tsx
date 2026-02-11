@@ -85,9 +85,7 @@ const TechStacks = () => {
   return (
     <section className="mt-10 mb-12 overflow-hidden">
       {" "}
-      {/* Added overflow-hidden to prevent horizontal scrollbars during animation */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-0 brutalist-border overflow-hidden">
-        {/* Web Development Side - Slides from Left */}
         <motion.div
           initial={{ x: -100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
@@ -116,11 +114,10 @@ const TechStacks = () => {
           <StackBox
             title="Others"
             items={webStacks.Tools}
-            colorClass="bg-orange-400 text-black"
+            colorClass="bg-[#fe7ac1] text-black"
           />
         </motion.div>
 
-        {/* QA Engineering Side - Slides from Right */}
         <motion.div
           initial={{ x: 100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
