@@ -44,8 +44,9 @@ export default function Home() {
               </div>
             */}
             <div className="group relative aspect-square w-full overflow-hidden">
-              {/* LIGHT MODE IMAGES */}
-              <div style={{ display: "var(--light-only)" }}>
+              {/* LIGHT MODE IMAGES 
+              <div style={{ display: "var(--light-only)" }}>*/}
+              <div>
                 <Image
                   src="/formalpic.jpg"
                   alt="Avatar"
@@ -60,7 +61,7 @@ export default function Home() {
                 />
               </div>
 
-              {/* DARK MODE IMAGES */}
+              {/* DARK MODE IMAGES
               <div style={{ display: "var(--dark-only)" }}>
                 <Image
                   src="/sleeping1.png" // Change this to your dark mode filename
@@ -74,7 +75,7 @@ export default function Home() {
                   fill
                   className="absolute inset-0 object-cover opacity-0 group-hover:opacity-100"
                 />
-              </div>
+              </div> */}
             </div>
             <div className="mt-4 flex justify-between items-center font-bold">
               <span className="text-xl md:text-2xl">@rzljhn</span>
