@@ -18,7 +18,7 @@ const projects: Project[] = [
     company: "EcoEnergy",
     description:
       "Streamlined internal leave request and approval processes through automated email notifications and structured hierarchical approval workflows.",
-    image: "/leavemgmt.png",
+    image: "/leavemgmt.PNG",
   },
   {
     title: "Leave Monitoring App",
