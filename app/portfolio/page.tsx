@@ -54,7 +54,7 @@ export default function Home() {
                   className="bg-zinc-800 object-cover"
                 />
                 <Image
-                  src="/formalshyy.jpg"
+                  src="/formalshy.jpg"
                   alt="Avatar Hover"
                   fill
                   className="absolute inset-0 object-cover opacity-0 group-hover:opacity-100"
@@ -104,7 +104,7 @@ export default function Home() {
           <div className="flex flex-wrap items-center gap-3 md:gap-4 pt-4">
             <div className="flex flex-wrap gap-3 w-full sm:w-auto">
               <a
-                href="mailto:ruzlet.com"
+                href="mailto:ruzletayaowork@gmail.com"
                 className="brutalist-border brutalist-shadow bg-[black] font-black text-white px-4 py-2 md:py-3 flex items-center gap-2 flex-1 sm:flex-none justify-center 
              transition-all duration-100 hover:translate-x-[-2px] hover:translate-y-[-5px] hover:shadow-none"
               >
@@ -132,7 +132,7 @@ export default function Home() {
       </div>
       <Timeline />
       <div className="h-[5vh]" /> {/*FOR GAP PURPOSE*/}
-      <a className="border-4 border-[var(--foreground)] shadow-[8px_8px_0px_0px_var(--shadow)] bg-[#50a3fd] font-black uppercase text-xl md:text-3xl px-4 md:px-6 py-3 flex items-center gap-2 flex-1 sm:flex-none justify-center hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[4px_4px_0px_0px_var(--shadow)] transition-all text-black">
+      <a className="border-4 border-[var(--foreground)] shadow-[8px_8px_0px_0px_var(--shadow)] bg-[#c47cfc] font-black uppercase text-xl md:text-3xl px-4 md:px-6 py-3 flex items-center gap-2 flex-1 sm:flex-none justify-center hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[4px_4px_0px_0px_var(--shadow)] transition-all text-black">
         PROJECTS
       </a>
       <Projects />

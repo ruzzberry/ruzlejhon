@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
+import { motion, Variants } from "framer-motion";
 
 interface Project {
   title: string;
@@ -20,6 +21,13 @@ const projects: Project[] = [
     image: "/leavemgmt1.png",
   },
   {
+    title: "Leave Monitoring App",
+    company: "Ecoenergy",
+    description:
+      "Employee Leave Monitoring Web App that enables employees to track their filed leave requests in real time, including approval status and current level within the organizational approval hierarchy.",
+    image: "/leavetracking.png",
+  },
+  {
     title: "Attendance & Monitoring",
     company: "EcoEnergy",
     description:
@@ -31,8 +39,15 @@ const projects: Project[] = [
     company: "Hooli Software Inc.",
     description:
       "A fast and easy SaaS management platform designed to efficiently manage groups of users. Developed to simplify user administration and streamline SaaS operations.",
-    image: "/saasconsole1.webp",
+    image: "/saasconsole.webp",
     link: "https://app.saasconsole.com/signin",
+  },
+  {
+    title: "eHataw",
+    company: "Capstone Project",
+    description:
+      "Mobile fitness application designed to make Zumba training accessible anytime, anywhere. It offers comprehensive instructional content, BMI tracking, and personalized dietary guidance to help users achieve their health and wellness goals effectively.",
+    image: "/ehataw.jpg",
   },
 ];
 
@@ -66,60 +81,77 @@ const Projects = () => {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [currentIndex, closeModal, nextImage, prevImage]);
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
   return (
     <section className="max-w-6xl mx-auto px-4 mt-10">
-      <div className="flex flex-col gap-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <div
-              key={index}
-              className="brutalist-border brutalist-shadow bg-[var(--card-bg)] flex flex-col h-full group"
-            >
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.1 }}
+      >
+        <div className="flex flex-col gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.map((project, index) => (
               <div
-                className="relative aspect-video w-full border-b-3 border-[var(--foreground)] overflow-hidden cursor-zoom-in"
-                onClick={() => setCurrentIndex(index)}
+                key={index}
+                className="brutalist-border brutalist-shadow bg-[var(--card-bg)] flex flex-col h-full group"
               >
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-                  <span className="opacity-0 group-hover:opacity-100 bg-[var(--background)] text-[var(--foreground)] brutalist-border px-2 py-1 font-black text-xs uppercase">
-                    View Full Size
-                  </span>
+                <div
+                  className="relative aspect-video w-full border-b-3 border-[var(--foreground)] overflow-hidden cursor-zoom-in"
+                  onClick={() => setCurrentIndex(index)}
+                >
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                    <span className="opacity-0 group-hover:opacity-100 bg-[var(--background)] text-[var(--foreground)] brutalist-border px-2 py-1 font-black text-xs uppercase">
+                      View Full Size
+                    </span>
+                  </div>
+                </div>
+
+                <div className="p-5 flex flex-col flex-grow">
+                  {project.company && (
+                    <span className="text-xs font-black uppercase bg-[#facc15] text-black px-2 py-1 w-fit mb-2 border-2 border-black">
+                      {project.company}
+                    </span>
+                  )}
+                  <h3 className="text-2xl font-black uppercase mb-3 tracking-tighter">
+                    {project.title}
+                  </h3>
+                  <p className="text-sm opacity-90 leading-relaxed mb-6 flex-grow">
+                    {project.description}
+                  </p>
+
+                  {project.link && (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-auto brutalist-border bg-[var(--foreground)] text-[var(--background)] font-black text-center py-2 uppercase text-sm transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none"
+                    >
+                      View Project
+                    </a>
+                  )}
                 </div>
               </div>
-
-              <div className="p-5 flex flex-col flex-grow">
-                {project.company && (
-                  <span className="text-xs font-black uppercase bg-[#facc15] text-black px-2 py-1 w-fit mb-2 border-2 border-black">
-                    {project.company}
-                  </span>
-                )}
-                <h3 className="text-2xl font-black uppercase mb-3 tracking-tighter">
-                  {project.title}
-                </h3>
-                <p className="text-sm opacity-90 leading-relaxed mb-6 flex-grow">
-                  {project.description}
-                </p>
-
-                {project.link && (
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-auto brutalist-border bg-[var(--foreground)] text-[var(--background)] font-black text-center py-2 uppercase text-sm transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none"
-                  >
-                    View Project
-                  </a>
-                )}
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
+      </motion.div>
 
       {/*GALLERY MODAL CODE BELOW*/}
       {currentIndex !== null && (

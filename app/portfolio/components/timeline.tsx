@@ -98,7 +98,7 @@ export default function Timeline() {
         viewport={{ once: true, amount: 0.1 }}
       >
         <div>
-          <h2 className="border-4 border-[var(--foreground)] shadow-[8px_8px_0px_0px_var(--shadow)] bg-[#52a6fe] font-black uppercase text-xl md:text-3xl px-4 md:px-6 py-3 flex items-center gap-2 flex-1 sm:flex-none inline-block justify-center hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[4px_4px_0px_0px_var(--shadow)] transition-all text-black">
+          <h2 className="border-4 border-[var(--foreground)] shadow-[8px_8px_0px_0px_var(--shadow)] bg-[#23cf6a] font-black uppercase text-xl md:text-3xl px-4 md:px-6 py-3 flex items-center gap-2 flex-1 sm:flex-none inline-block justify-center hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[4px_4px_0px_0px_var(--shadow)] transition-all text-black">
             Experience
           </h2>
           <div className="h-[5vh]" /> {/*FOR GAP PURPOSE*/}
@@ -119,7 +119,7 @@ export default function Timeline() {
         viewport={{ once: true, amount: 0.1 }}
       >
         <div>
-          <h2 className="border-4 border-[var(--foreground)] shadow-[8px_8px_0px_0px_var(--shadow)] bg-[#c47cfc] font-black uppercase text-xl md:text-3xl px-4 md:px-6 py-3 flex items-center gap-2 flex-1 sm:flex-none inline-block justify-center hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[4px_4px_0px_0px_var(--shadow)] transition-all text-black">
+          <h2 className="border-4 border-[var(--foreground)] shadow-[8px_8px_0px_0px_var(--shadow)] bg-[#ff6467] font-black uppercase text-xl md:text-3xl px-4 md:px-6 py-3 flex items-center gap-2 flex-1 sm:flex-none inline-block justify-center hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[4px_4px_0px_0px_var(--shadow)] transition-all text-black">
             Education
           </h2>
           <div className="h-[5vh]" /> {/*FOR GAP PURPOSE*/}
