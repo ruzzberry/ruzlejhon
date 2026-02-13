@@ -8,6 +8,7 @@ import SpotifyPlaylist from "./components/spotifyplaylist";
 import TechStacks from "./components/techstacks";
 import TechStachPreview from "./components/techstack";
 import Timeline from "./components/timeline";
+import Projects from "./components/projects";
 
 export default function Home() {
   const [text] = useTypewriter({
@@ -23,8 +24,8 @@ export default function Home() {
       className="min-h-screen p-6 md:pt-12 md:pb-24 md:px-24 relative animate-fade-in overflow-x-hidden"
       style={{
         backgroundImage: "url('/Sprinkle.svg')",
-        backgroundSize: "cover",
-        backgroundPosition: "left",
+        //backgroundSize: "cover",
+        backgroundPosition: "center",
       }}
     >
       <div className="flex justify-between items-start mb-12 md:mb-20">
@@ -78,10 +79,10 @@ export default function Home() {
             </div>
             <div className="mt-4 flex justify-between items-center font-bold">
               <span className="text-xl md:text-2xl">@rzljhn</span>
-              <div className="flex items-center gap-2 border-2 border-black dark:border-white px-2 py-1 rounded-full text-[10px] md:text-xs uppercase">
+              {/*<div className="flex items-center gap-2 border-2 border-black dark:border-white px-2 py-1 rounded-full text-[10px] md:text-xs uppercase">
                 <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
                 Online
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
@@ -103,7 +104,7 @@ export default function Home() {
           <div className="flex flex-wrap items-center gap-3 md:gap-4 pt-4">
             <div className="flex flex-wrap gap-3 w-full sm:w-auto">
               <a
-                href="#"
+                href="mailto:ruzlet.com"
                 className="brutalist-border brutalist-shadow bg-[black] font-black text-white px-4 py-2 md:py-3 flex items-center gap-2 flex-1 sm:flex-none justify-center 
              transition-all duration-100 hover:translate-x-[-2px] hover:translate-y-[-5px] hover:shadow-none"
               >
@@ -130,6 +131,11 @@ export default function Home() {
         <TechStacks />
       </div>
       <Timeline />
+      <div className="h-[5vh]" /> {/*FOR GAP PURPOSE*/}
+      <a className="border-4 border-[var(--foreground)] shadow-[8px_8px_0px_0px_var(--shadow)] bg-[#50a3fd] font-black uppercase text-xl md:text-3xl px-4 md:px-6 py-3 flex items-center gap-2 flex-1 sm:flex-none justify-center hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[4px_4px_0px_0px_var(--shadow)] transition-all text-black">
+        PROJECTS
+      </a>
+      <Projects />
       <section className="pb-24">
         <SpotifyPlaylist />
       </section>

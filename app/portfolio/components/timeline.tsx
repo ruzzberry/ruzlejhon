@@ -9,7 +9,6 @@ interface MyTimelineProps {
   direction: "left" | "right";
 }
 
-// 1. Define child variants for the cards
 const cardVariants: Variants = {
   hidden: (direction: "left" | "right") => ({
     opacity: 0,
@@ -79,20 +78,19 @@ export default function Timeline() {
     },
   ];
 
-  // 2. Define parent variants to control the stagger timing
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2, // Time between each child animation
+        staggerChildren: 0.2,
       },
     },
   };
 
   return (
     <div className="max-w-6xl mx-auto px-4 mt-20 grid md:grid-cols-2 gap-12 overflow-hidden">
-      {/* Experience Column */}
+      {/*MY EXPERIENCE COLUMN HERE*/}
       <motion.div
         variants={containerVariants}
         initial="hidden"
@@ -113,7 +111,7 @@ export default function Timeline() {
         </div>
       </motion.div>
 
-      {/* Education Column */}
+      {/*MY EDUCATION COLUMN HERE*/}
       <motion.div
         variants={containerVariants}
         initial="hidden"

@@ -3,10 +3,9 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
-// --- Types & Data ---
 type TechItem = {
   name: string;
-  icon: string; // Path to the icon in your public folder (e.g., "/icons/react.svg")
+  icon: string;
 };
 
 type ServiceType = "web" | "qa";
@@ -84,7 +83,6 @@ const STACKS: Record<
   },
 };
 
-// --- Sub-Component: Tech Chip (Image 3 Style) ---
 const TechChip = ({ item }: { item: TechItem }) => (
   <div className="flex items-center gap-3 bg-[#1a1a1a] border-2 border-[#ff4d4d] rounded-full px-4 py-2 shadow-[4px_4px_0px_0px_rgba(255,77,77,0.3)] hover:translate-y-[-2px] transition-transform cursor-default">
     <div className="w-6 h-6 relative flex-shrink-0">
@@ -101,7 +99,6 @@ const TechChip = ({ item }: { item: TechItem }) => (
   </div>
 );
 
-// --- Sub-Component: Modal ---
 const StackModal = ({
   type,
   onClose,
@@ -138,7 +135,6 @@ const StackModal = ({
           <h2 className="text-3xl font-black uppercase italic tracking-tighter text-black leading-none">
             {data.title}
           </h2>
-          {/*LINE SA IBABA NG TITLE <div className="h-2 w-24 bg-black mt-2"></div>*/}
         </div>
 
         <div className="space-y-10">
@@ -160,9 +156,6 @@ const StackModal = ({
   );
 };
 
-// ... Rest of your TechStach and TechStachPreview components remain the same ...
-
-// --- Main Component ---
 const TechStach = ({
   title,
   description,
