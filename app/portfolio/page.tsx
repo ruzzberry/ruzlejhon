@@ -94,10 +94,10 @@ export default function Home() {
           <div className="max-w-xl space-y-4">
             <p className="text-lg opacity-90 leading-relaxed">
               I’m a full-stack web developer and QA engineer who enjoys building
-              robust web solutions and making sure they actually work through a
-              sophisticated testing. From front-end to back-end, and from
-              testing to deployment, I focus on clean code, solid functionality,
-              and great user experience.{" "}
+              robust web solutions and making sure they actually work through
+              manual and automated testing. From front-end to back-end, and from
+              testing to deployment, I focus on clean code and great user
+              experience.{" "}
             </p>
           </div>
 
@@ -112,8 +112,8 @@ export default function Home() {
               </a>
 
               <a
-                href="/TAYAO, RUZLE JHON L. RESUME.pdf"
-                download="TAYAO_RUZLE_JHON_L_RESUME.pdf"
+                href="/Tayao_RuzleJhon_Quality_Assurance_Resume.pdf"
+                download="Tayao_RuzleJhon_Quality_Assurance_Resume.pdf"
                 className="brutalist-border brutalist-shadow bg-[#facc15] font-black text-black px-4 py-2 md:py-3 flex items-center gap-2 flex-1 sm:flex-none justify-center 
              transition-all duration-100 hover:translate-x-[-2px] hover:translate-y-[-5px] hover:shadow-none"
               >

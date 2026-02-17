@@ -35,8 +35,8 @@ export default function Home() {
             </Link>
 
             <a
-              href="/TAYAO, RUZLE JHON L. RESUME.pdf"
-              download
+              href="/Tayao_RuzleJhon_Quality_Assurance_Resume.pdf"
+              download="Tayao_RuzleJhon_Quality_Assurance_Resume.pdf"
               className="flex items-center gap-2 px-8 py-3 bg-[#1A367F] text-white rounded-full font-bold tracking-wide transition-all hover:scale-105 hover:brightness-110 shadow-md"
             >
               <svg
