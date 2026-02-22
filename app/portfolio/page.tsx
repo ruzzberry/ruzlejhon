@@ -136,9 +136,9 @@ export default function Home() {
         PROJECTS
       </a>
       <Projects />
-      <section className="pb-24">
+      {/*<section className="pb-24">
         <SpotifyPlaylist />
-      </section>
+      </section>*/}
     </main>
   );
 }
