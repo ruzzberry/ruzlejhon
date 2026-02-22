@@ -26,8 +26,8 @@ export default function Contact() {
               Get In <span className="text-[#ff5c00]">Touch</span>
             </h2>
             <p className="text-lg font-bold opacity-90 max-w-md">
-              I'm looking for new opportunities. Whether you have a question, or
-              planning a collaboration my inbox is always open!
+              I'm looking for new opportunities. Whether you have a question or
+              planning a collaboration, my inbox is always open!
             </p>
 
             <div className="space-y-4 pt-4">
