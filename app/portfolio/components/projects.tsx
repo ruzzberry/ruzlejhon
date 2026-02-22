@@ -141,7 +141,7 @@ const Projects = () => {
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-auto brutalist-border bg-[var(--foreground)] text-[var(--background)] font-black text-center py-2 uppercase text-sm transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none"
+                      className="mt-auto brutalist-border bg-[var(--foreground)] text-[var(--background)] font-black text-center py-2 uppercase text-sm transition-all hover:translate-y-[-3px] hover:shadow-none"
                     >
                       View Project
                     </a>
