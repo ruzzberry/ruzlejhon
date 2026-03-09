@@ -14,6 +14,14 @@ interface Project {
 
 const projects: Project[] = [
   {
+    title: "R Job Tracking (RJT)",
+    company: "Personal",
+    description:
+      "R Job Tracking (RJT) helps you organize your job hunt by tracking your recorded companies, positions, and status - all in a clean, simple web app.",
+    image: "/rjtScreenshot.PNG",
+    link: "https://rjobtracking.vercel.app/",
+  },
+  {
     title: "Leave Management Application",
     company: "EcoEnergy",
     description:
