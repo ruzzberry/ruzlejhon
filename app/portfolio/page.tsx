@@ -1,16 +1,16 @@
 "use client";
 
 import Image from "next/image";
-import ThemeToggle from "./components/ThemeToggle";
+import ThemeToggle from "../components/ThemeToggle";
 import React from "react";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
-import SpotifyPlaylist from "./components/spotifyplaylist";
-import TechStacks from "./components/techstacks";
-import TechStachPreview from "./components/techstack";
-import Timeline from "./components/timeline";
-import Projects from "./components/projects";
-import Contact from "./components/contact";
-import Footer from "./components/footer";
+import SpotifyPlaylist from "../components/spotifyplaylist";
+import TechStacks from "../components/techstacks";
+import TechStachPreview from "../components/techstack";
+import Timeline from "../components/timeline";
+import Projects from "../components/projects";
+import Contact from "../components/contact";
+import Footer from "../components/footer";
 
 export default function Home() {
   const [text] = useTypewriter({

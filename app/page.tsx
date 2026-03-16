@@ -1,79 +1,281 @@
+"use client";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import DiscordStatus from "./components/discordstatus";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  Github,
+  Linkedin,
+  Facebook,
+  Mail,
+  Moon,
+  Sun,
+  ArrowRight,
+} from "lucide-react";
 
 export default function Home() {
+  // --- ADD THESE LINES ---
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // This runs once the component mounts
+    setIsLoading(false);
+  }, []);
+  // -----------------------
+  const [imgIndex, setImgIndex] = useState(0);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const images = ["/main_pic.jpg", "/pic_2.png", "/pic1.jpg"];
+  const stacks = [
+    "React",
+    "Next.js",
+    "TypeScript",
+    "Tailwind",
+    "Node.js",
+    "Python",
+    "Selenium",
+    "Cypress",
+    "PostgreSQL",
+  ];
+
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [isDarkMode]);
+
+  const bentoCard = `
+    bg-white dark:bg-zinc-900 
+    border-4 border-black dark:border-white 
+    shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] dark:shadow-[8px_8px_0px_0px_rgba(255,255,255,1)] 
+    p-6 transition-all hover:-translate-x-1 hover:-translate-y-1 
+    hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] dark:hover:shadow-[12px_12px_0px_0px_rgba(255,255,255,1)]
+  `;
+  if (isLoading) {
+    return (
+      <div className="fixed inset-0 flex flex-col items-center justify-center bg-[#f5f4f4] dark:bg-zinc-950 z-[9999]">
+        <motion.img
+          src="/eatchipstransparent.png"
+          alt="Loading..."
+          className="w-48 h-48"
+          animate={{ rotate: 360 }}
+          transition={{
+            repeat: Infinity,
+            duration: 1.5,
+            ease: "linear",
+          }}
+        />
+        {/* Added margin-top (mt-4) for spacing */}
+        <p className="text-2xl font-black uppercase animate-pulse mt-4">
+          Loading...
+        </p>
+      </div>
+    );
+  }
+
   return (
-    <div
-      className="animate-fade-in flex min-h-screen flex-col bg-zinc-50 font-sans dark:bg-white lg:flex-row overflow-hidden"
-      style={{
-        backgroundColor: "#f5f4f4",
-        backgroundImage: "url('/AnimatedShapes.svg')",
-        backgroundSize: "cover",
-        backgroundPosition: "left",
-      }}
-    >
-      <main className="flex flex-1 flex-col items-center justify-center px-8 py-12 text-center lg:items-start lg:pl-55 lg:text-center">
-        <div className="flex flex-col space-y-8 max-w-lg">
-          <div className="w-full transition-all hover:scale-105 hover:brightness-110">
-            <img
-              src="/launchimage2cut.png"
-              alt="Ruzle's Portfolio"
-              draggable="false"
-              className="select-none pointer-events-none w-full h-auto "
+    <div className="min-h-screen bg-[#f5f4f4] dark:bg-zinc-950 p-4 md:p-8 font-sans text-black dark:text-white animate-fade-in transition-colors duration-300">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-auto">
+        {/*HERO SECTION*/}
+        <div
+          className={`${bentoCard} md:col-span-8 !bg-[#FFC567] dark:!bg-[#1E3A8A]`}
+        >
+          <h1 className="text-4xl md:text-6xl text-[#fcfef6] font-black uppercase leading-tight dark:text-white">
+            Ruzle Jhon Tayao
+          </h1>
+          <p className="text-xl text-[#fcfef6] font-bold mt-2 dark:text-white/90 uppercase">
+            Software Engineer & QA Engineer
+          </p>
+        </div>
+
+        {/*FOR IMAGE DISPLAY*/}
+        <div
+          className={`${bentoCard} md:col-span-2 relative overflow-hidden group cursor-pointer !bg-[#f5f4f4]`}
+          onClick={() => setImgIndex((prev) => (prev + 1) % images.length)}
+        >
+          <AnimatePresence mode="wait">
+            <motion.img
+              key={imgIndex}
+              src={images[imgIndex]}
+              initial={{ x: 100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: -100, opacity: 0 }}
+              className="h-full w-full object-cover"
             />
-          </div>
+          </AnimatePresence>
+        </div>
 
-          <h2 className="text-xl md:text-2xl font-semibold text-[#2D4A9D] dark:text-blue-400">
-            Software Engineer and QA Engineer in one
-          </h2>
+        {/*FOR DISCORD STATUS COMPONENT*/}
+        <div
+          role="button"
+          tabIndex={0}
+          onClick={() =>
+            window.open(
+              "https://discord.com/users/608176201697329168",
+              "_blank",
+            )
+          }
+          onKeyDown={(e) => {
+            if (e.key === "Enter") window.open("...", "_blank");
+          }}
+          className={`${bentoCard} md:col-span-2 !bg-[#FB7DA8] dark:!bg-indigo-900 text-white flex items-center justify-center cursor-pointer`}
+        >
+          <DiscordStatus />
+        </div>
 
-          <div className="flex flex-wrap justify-center gap-4 ">
-            <Link
-              href="/portfolio"
-              className="px-10 py-3 bg-[#A1C4FD] text-white rounded-full font-bold tracking-wide transition-all hover:scale-105 hover:brightness-110 shadow-md"
-            >
-              VIEW PORTFOLIO
-            </Link>
+        {/*ABOUT ME*/}
+        <div className={`${bentoCard} md:col-span-4 !bg-[#FD5A46]`}>
+          <h3 className="text-2xl font-black mb-2 text-[#fcfef6] uppercase">
+            About Me
+          </h3>
+          <p className="text-[#fcfef6] font-medium leading-relaxed">
+            I’m a developer specializing in web development and QA, passionate
+            about building reliable, user-friendly apps. Outside of tech, I love
+            shopping, skincare, and café hopping, always seeking new
+            inspiration.
+          </p>
+        </div>
 
-            <a
-              href="/Tayao_RuzleJhon_Quality_Assurance_Resume.pdf"
-              download="Tayao_RuzleJhon_Quality_Assurance_Resume.pdf"
-              className="flex items-center gap-2 px-8 py-3 bg-[#1A367F] text-white rounded-full font-bold tracking-wide transition-all hover:scale-105 hover:brightness-110 shadow-md"
-            >
+        {/*FOR WEB DEV*/}
+        <Link
+          href="/portfolio"
+          className={`${bentoCard} md:col-span-4 !bg-[#058CD7] group flex flex-col justify-between min-h-[200px]`}
+        >
+          <div className="flex justify-between items-start">
+            <div className="bg-black text-[#fcfef6] p-2 rounded-lg mb-4">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
+                width="24"
+                height="24"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                strokeWidth="2.5"
+                strokeWidth="3"
                 strokeLinecap="round"
                 strokeLinejoin="round"
               >
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                <polyline points="7 10 12 15 17 10" />
-                <line x1="12" x2="12" y1="15" y2="3" />
+                <polyline points="16 18 22 12 16 6" />
+                <polyline points="8 6 2 12 8 18" />
               </svg>
-              DOWNLOAD CV
-            </a>
+            </div>
+            <ArrowRight
+              className="group-hover:translate-x-2 transition-transform"
+              size={32}
+            />
           </div>
+          <h3 className="text-3xl text-[#fcfef6] font-black uppercase">
+            Web <br /> Developer
+          </h3>
+          <p className="font-bold text-[#fcfef6] text-sm mt-4 uppercase tracking-wider">
+            Building Scalable Web Apps & Creative UI
+          </p>
+        </Link>
+
+        {/*FOR QA ENG*/}
+        <Link
+          href="/portfolio"
+          className={`${bentoCard} md:col-span-4 !bg-[#552CB7] dark:!bg-[#6D28D9] group flex flex-col justify-between min-h-[200px]`}
+        >
+          <div className="flex justify-between items-start">
+            <div className="bg-black text-[#fcfef6] p-2 rounded-lg mb-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg>
+            </div>
+            <ArrowRight
+              className="group-hover:translate-x-2 transition-transform"
+              size={32}
+            />
+          </div>
+          <h3 className="text-3xl text-[#fcfef6] font-black uppercase">
+            QA <br /> Engineer
+          </h3>
+          <p className="font-bold text-[#fcfef6] text-sm mt-4 uppercase tracking-wider">
+            Automation, Manual Testing & Quality Assurance
+          </p>
+        </Link>
+
+        {/*FOR SOCIALS*/}
+        <div
+          className={`${bentoCard} md:col-span-3 flex flex-wrap gap-4 items-center justify-center !bg-[#FFC8DD]`}
+        >
+          <a
+            href="https://www.facebook.com/ruzle.tayao/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Facebook
+              size={32}
+              strokeWidth={2.5}
+              className="cursor-pointer hover:scale-110 transition-transform"
+            />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/tayaoruzlejhonl/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Linkedin
+              size={32}
+              strokeWidth={2.5}
+              className="cursor-pointer hover:scale-110 transition-transform"
+            />
+          </a>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="mailto:ruzletayaowork@gmail.com"
+          >
+            <Mail
+              size={32}
+              strokeWidth={2.5}
+              className="cursor-pointer hover:scale-110 transition-transform"
+            />
+          </a>
+          <a
+            href="https://github.com/ruzzberry"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Github
+              size={32}
+              strokeWidth={2.5}
+              className="cursor-pointer hover:scale-110 transition-transform"
+            />
+          </a>
         </div>
-      </main>
 
-      <div className="group relative flex flex-1 items-end justify-end self-end lg:h-screen lg:w-1/2">
-        <img
-          src="/casualblondetransparent.png"
-          alt="Ruzle"
-          draggable="false"
-          className="w-full max-w-md lg:max-w-none lg:h-[95vh] lg:w-auto object-contain object-right-bottom select-none group-hover:hidden"
-        />
-
-        <img
-          src="/covertransparent.png"
-          alt="Ruzle Hover"
-          draggable="false"
-          className="hidden group-hover:block absolute bottom-0 right-0 w-[115%] max-w-none lg:h-[95vh] lg:w-auto object-contain object-right-bottom select-none scale-110 origin-bottom-right"
-        />
+        {/*FOR MARQUEE*/}
+        <div
+          className={`${bentoCard} md:col-span-9 overflow-hidden whitespace-nowrap !bg-[#00995E] dark:!bg-[#15803D] text-[#fcfef6] dark:text-white py-7`}
+        >
+          <motion.div
+            className="flex gap-8 items-center"
+            animate={{ x: [0, -1000] }}
+            transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
+          >
+            {[...stacks, ...stacks].map((stack, i) => (
+              <span
+                key={i}
+                className="text-2xl font-black uppercase tracking-tighter"
+              >
+                {stack}
+              </span>
+            ))}
+          </motion.div>
+        </div>
       </div>
     </div>
   );
