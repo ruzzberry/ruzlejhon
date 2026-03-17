@@ -11,6 +11,7 @@ import Timeline from "../components/timeline";
 import Projects from "../components/projects";
 import Contact from "../components/contact";
 import Footer from "../components/footer";
+import Link from "next/link";
 
 export default function Home() {
   const [text] = useTypewriter({
@@ -33,9 +34,12 @@ export default function Home() {
         }}
       >
         <div className="flex justify-between items-start mb-12 md:mb-20">
-          <div className="brutalist-border brutalist-shadow bg-[var(--card-bg)] text-[var(--foreground)] px-4 py-2 font-black uppercase tracking-tighter text-lg md:text-xl">
+          <Link
+            className="brutalist-border brutalist-shadow bg-[var(--card-bg)] text-[var(--foreground)] px-4 py-2 font-black uppercase tracking-tighter text-lg md:text-xl"
+            href="/"
+          >
             Ruzle's Portfolio
-          </div>
+          </Link>
           <ThemeToggle />
         </div>
         <div className="h-[1.8vh]" /> {/*FOR GAP PURPOSE*/}

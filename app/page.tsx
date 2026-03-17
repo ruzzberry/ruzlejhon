@@ -14,18 +14,15 @@ import {
 } from "lucide-react";
 
 export default function Home() {
-  // --- ADD THESE LINES ---
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // This runs once the component mounts
     setIsLoading(false);
   }, []);
-  // -----------------------
   const [imgIndex, setImgIndex] = useState(0);
   const [isDarkMode, setIsDarkMode] = useState(false);
 
-  const images = ["/main_pic.jpg", "/pic_2.png", "/pic1.jpg"];
+  const images = ["/main_pic.jpg", "/pic_2.PNG", "/pic1.jpg"];
   const stacks = [
     "React",
     "Next.js",
@@ -47,15 +44,15 @@ export default function Home() {
   }, [isDarkMode]);
 
   const bentoCard = `
-    bg-white dark:bg-zinc-900 
-    border-4 border-black dark:border-white 
-    shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] dark:shadow-[8px_8px_0px_0px_rgba(255,255,255,1)] 
+    bg-white dark:bg-white 
+    border-4 border-black dark:border-black 
+    shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] dark:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]
     p-6 transition-all hover:-translate-x-1 hover:-translate-y-1 
-    hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] dark:hover:shadow-[12px_12px_0px_0px_rgba(255,255,255,1)]
+    hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] dark:hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]
   `;
   if (isLoading) {
     return (
-      <div className="fixed inset-0 flex flex-col items-center justify-center bg-[#f5f4f4] dark:bg-zinc-950 z-[9999]">
+      <div className="fixed inset-0 flex flex-col items-center justify-center bg-[#f5f4f4] dark:bg-[#f5f4f4] z-[9999]">
         <motion.img
           src="/eatchipstransparent.png"
           alt="Loading..."
@@ -67,7 +64,6 @@ export default function Home() {
             ease: "linear",
           }}
         />
-        {/* Added margin-top (mt-4) for spacing */}
         <p className="text-2xl font-black uppercase animate-pulse mt-4">
           Loading...
         </p>
@@ -76,16 +72,16 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-[#f5f4f4] dark:bg-zinc-950 p-4 md:p-8 font-sans text-black dark:text-white animate-fade-in transition-colors duration-300">
+    <div className="min-h-screen bg-[#f5f4f4] dark:bg-[#f5f4f4] p-4 md:p-8 font-sans text-black dark:text-white animate-fade-in transition-colors duration-300">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-auto">
         {/*HERO SECTION*/}
         <div
-          className={`${bentoCard} md:col-span-8 !bg-[#FFC567] dark:!bg-[#1E3A8A]`}
+          className={`${bentoCard} md:col-span-8 !bg-[#FFC567] dark:!bg-[#FFC567]`}
         >
-          <h1 className="text-4xl md:text-6xl text-[#fcfef6] font-black uppercase leading-tight dark:text-white">
+          <h1 className="text-4xl md:text-6xl text-[#fcfef6] font-black uppercase leading-tight dark:text-[#fcfef6]">
             Ruzle Jhon Tayao
           </h1>
-          <p className="text-xl text-[#fcfef6] font-bold mt-2 dark:text-white/90 uppercase">
+          <p className="text-xl text-[#fcfef6] font-bold mt-2 dark:text-[#fcfef6] uppercase">
             Software Engineer & QA Engineer
           </p>
         </div>
@@ -120,7 +116,7 @@ export default function Home() {
           onKeyDown={(e) => {
             if (e.key === "Enter") window.open("...", "_blank");
           }}
-          className={`${bentoCard} md:col-span-2 !bg-[#FB7DA8] dark:!bg-indigo-900 text-white flex items-center justify-center cursor-pointer`}
+          className={`${bentoCard} md:col-span-2 !bg-[#FB7DA8] dark:!bg-[#FB7DA8] text-white flex items-center justify-center cursor-pointer`}
         >
           <DiscordStatus />
         </div>
@@ -176,7 +172,7 @@ export default function Home() {
         {/*FOR QA ENG*/}
         <Link
           href="/portfolio"
-          className={`${bentoCard} md:col-span-4 !bg-[#552CB7] dark:!bg-[#6D28D9] group flex flex-col justify-between min-h-[200px]`}
+          className={`${bentoCard} md:col-span-4 !bg-[#552CB7] dark:!bg-[#552CB7] group flex flex-col justify-between min-h-[200px]`}
         >
           <div className="flex justify-between items-start">
             <div className="bg-black text-[#fcfef6] p-2 rounded-lg mb-4">
@@ -259,7 +255,7 @@ export default function Home() {
 
         {/*FOR MARQUEE*/}
         <div
-          className={`${bentoCard} md:col-span-9 overflow-hidden whitespace-nowrap !bg-[#00995E] dark:!bg-[#15803D] text-[#fcfef6] dark:text-white py-7`}
+          className={`${bentoCard} md:col-span-9 overflow-hidden whitespace-nowrap !bg-[#00995E] dark:!bg-[#00995E] text-[#fcfef6] dark:text-[#fcfef6]`}
         >
           <motion.div
             className="flex gap-8 items-center"
