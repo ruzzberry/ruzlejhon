@@ -82,7 +82,7 @@ export default function Home() {
             Ruzle Jhon Tayao
           </h1>
           <p className="text-xl text-[#fcfef6] font-bold mt-2 dark:text-[#fcfef6] uppercase">
-            Software Engineer & QA Engineer
+            Web Developer & QA Engineer
           </p>
         </div>
 
@@ -127,10 +127,10 @@ export default function Home() {
             About Me
           </h3>
           <p className="text-[#fcfef6] font-medium leading-relaxed">
-            I’m a developer specializing in web development and QA, passionate
-            about building reliable, user-friendly apps. Outside of tech, I love
-            shopping, skincare, and café hopping, always seeking new
-            inspiration.
+            I specialize in Web Development and Quality Assurance Engineer. I am
+            passionate about building reliable, and user-friendly apps. Outside
+            of tech, I love shopping, skincare, and café hopping, always seeking
+            new inspiration.
           </p>
         </div>
 
